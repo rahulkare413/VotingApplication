@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+<style >
+ body {
+        background-image: url('https://www.cerrogordoauditor.gov/home/showpublishedimage/682/636452220134800000');
+        /* Replace 'path_to_your_image.jpg' with your image file path */
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif; /* Example font family */
+    }
+    .design {
+    align-self: center;
+    width:400px;
+    height: auto;
+    padding: 20px;
+    display: block;
+    border: 10px solid black;
+    }
+    
+    .resigterButton {
+    background-color: green;
+    color: white;
+    padding: 14px 20px;
+    margin:4px 0;
+    border: none;
+    width: 100%;
+}
+</style>
+</head>
+<body>
+<div align="center"><h1>Sign Up</h1></div>
+<div align="center" >
+
+<form action="registration" class="design" method="post">
+<input type="text" name="userName" placeholder="Full Name" style="width:100%; padding: 14px 3px" >
+<br><br>
+<input type="text" name="userEmail" placeholder="Email" style="width:100%; padding: 14px 3px">
+<br><br>
+<input type="tel" name="userContact" placeholder="Contact No" style="width:100%; padding: 14px 3px">
+<br><br>
+<label><b>Gender </b></label>
+<input type="radio" name="gender" value="Male">
+<label>Male </label>
+<input type="radio" name="gender" value="Female">
+<label>Female </label>
+<br><br>
+<label><b>Select state :</b></label>
+<select name="state" >
+<option value="mh">Maharashtra</option>
+<option value="mp">Madhya Pradesh</option>
+<option value="ap">Andra Pradesh</option>
+<option value="ap">Uttar Pradesh</option>
+<option value="ap">Tamilnadu</option>
+<option value="ap">Karnataka</option>
+<option value="ap">Hariyana</option>
+<option value="ap">Punjab</option>
+</select>
+<br><br>
+<label><b>Id Proof :</b></label>
+<select name="idProof" >
+<option value="Aadhar">Aadhar card</option>
+<option value="Pan">Pan Card</option>
+<option value="Voting">Voting Card</option>
+</select>
+<input type="text" name="idNo" placeholder="enter card no"> 
+<br><br>
+<input type="password" id="password" name="pass" placeholder="Enter Password" style="width:100%; padding: 14px 3px">
+<br><br>
+<input type="password" name="confirmPass" id="confirm_password" placeholder="Enter Confirm password" style="width:100%; padding: 14px 3px">
+<br><br><br>
+<input type="submit" class="resigterButton" value="Register">
+</form>
+
+<script>
+var password = document.getElementById("password"),
+    confirm_password = document.getElementById("confirm_password");
+
+function validatePassword() {
+    if (password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Password Don't Match");
+    } else {
+        confirm_password.setCustomValidity('');
+    }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
+</div>
+</body>
+</html>
